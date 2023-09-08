@@ -21,4 +21,3 @@ def test_3():
     assert ( f.puissance (0 ,3) == 0 )
     assert ( f.puissance (0 , -3) == 0 )
     
-        
