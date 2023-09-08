@@ -6,7 +6,6 @@ def puissance(a,b):
         raise TypeError("Only integers are allowed")
     
     expo= a**b
-
     return expo
     
 #puissance(2,6)
