@@ -9,7 +9,13 @@ def puissance(a,b):
     if b < 0:
         raise ValueError("L'exposant ne doit pas etre negatif.")
     
-    return a ** b
+    #return a ** b
+    
+    resultat = 1
+    for i in range(b):
+        resultat *= a
+    
+    return resultat
     
 #puissance(2,6)
     
