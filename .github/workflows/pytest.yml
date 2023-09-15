@@ -11,3 +11,6 @@ jobs:
         run: pip3 install pytest
       - name: Run tests
         run: pytest TP1/test.py
+      - run : echo "Nom branche : $ { { github . r e f } } "
+      - run : echo "Nom repo : $ { { github . r e p o s i t o r y } } . "
+
