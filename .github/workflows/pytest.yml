@@ -12,7 +12,7 @@ jobs:
       - name: Run tests
         run: pytest TP1/test.py
       - name: nom de branche
-        run: echo "Nom branche: ${{ github.ref }}"
+        run: echo "Nom branche: ${{github.ref}}"
       - name: nom de repo
-        run: echo "Nom repo: ${{ github.repository }}."
+        run: echo "Nom repo: ${{github.repository}}."
 
