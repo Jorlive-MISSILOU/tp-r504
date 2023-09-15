@@ -12,6 +12,6 @@ jobs:
       - name: Run tests
         run: pytest TP1/test.py
       - name: nom de branche 
-        run : echo "Nom branche : $ { { github . r e f } } "
-        run : echo "Nom repo : $ { { github . r e p o s i t o r y } } . "
+        run: echo "Nom branche: ${{ github.ref }}"
+        run: echo "Nom repo: ${{ github.repository }}."
 
