@@ -9,8 +9,6 @@ jobs:
         uses: actions/setup-python@v4
       - name: installation de pytest
         run: pip3 install pytest
-      - name: Nom de branche
-        run: echo "Nom branche: ${{ github.ref }}""
       - name: Nom du repo
         run: echo "Nom repo: ${{ github.repository }}.""
       - name: Run tests
