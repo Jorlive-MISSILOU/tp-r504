@@ -8,7 +8,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y pkg-config
 
 # Installation des paquets
-RUN apt-get install -y build-essential python-dev python3-pip default-libmysqlclient-dev
+RUN apt-get install -y python-dev python3-pip default-libmysqlclient-dev
 
 # Mettre à jour pip
 RUN pip3 install --upgrade pip
