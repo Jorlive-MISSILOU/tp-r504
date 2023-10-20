@@ -8,7 +8,11 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y pkg-config
 
 # Installation des paquets
+<<<<<<< HEAD
+RUN apt-get install -y build-essential python-dev python3-pip default-libmysqlclient-dev
+=======
 RUN apt-get install -y python-dev python3-pip default-libmysqlclient-dev
+>>>>>>> 7ec0fb91c4a4f2e3339029604d4609a187a0c772
 
 # Mettre à jour pip
 RUN pip3 install --upgrade pip
@@ -22,8 +26,11 @@ RUN mkdir -p /srv/templates
 # Copier le fichier index.html dans /srv/templates
 COPY index.html /srv/templates/
 
+<<<<<<< HEAD
+=======
 # Copier le fichier app1.py dans /srv/
 COPY app1.py /srv/
 
+>>>>>>> 7ec0fb91c4a4f2e3339029604d4609a187a0c772
 CMD ["flask","--app","/srv/app1","run","--host=0.0.0.0"]
 

@@ -1,4 +1,8 @@
 #!/bin/bash
+
+#purge toutes les images
+docker image prune -a
+
 docker rm -f $(docker ps -aq)
 if [ $? != 0 ]; then
 	exit 2
