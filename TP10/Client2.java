@@ -1,15 +1,15 @@
-import java.io.IOException;
 import java.io.InputStreamReader;
-
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.client.methods.HttpGet;
+import java.io.IOException;
+
+import javax.json.*;
 
 public class Client2 {
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class Client2 {
         }
 
         // Création de l'URL avec la clé API fournie par l'enseignant
-        String omdbApiUrl = "omdbapi.com?apikey=751ea6aa&t=jaws" + args[0];
+        String omdbApiUrl = "http://www.omdbapi.com/?apikey=751ea6aa&t=" + args[0];
 
         // Création du client HTTP et de la requête GET
         try (CloseableHttpClient client = HttpClients.createDefault()) {

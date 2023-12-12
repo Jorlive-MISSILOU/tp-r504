@@ -1,1 +1,1 @@
-java -classpath ".:/home/user/librairie/lib/*" Client1 $1
+java -classpath ".:/home/user/librairie/lib/*" Client2 $1
