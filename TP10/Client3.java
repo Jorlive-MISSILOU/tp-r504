@@ -1,5 +1,4 @@
 import java.io.InputStreamReader;
-
 import javax.json.*;
 
 import org.apache.http.HttpEntity;
@@ -54,6 +53,8 @@ public class Client3 {
                                 JsonObject ratingObject = ratingsArray.getJsonObject(i);
                                 System.out.println("Source : " + ratingObject.getString("Source"));
                                 System.out.println("Value : " + ratingObject.getString("Value"));
+                                // Vérifier le score pour afficher la mention correspondante
+                                checkAndDisplayRatingMention(ratingObject.getString("Value"));
                             }
                         }
                     }
@@ -66,5 +67,21 @@ public class Client3 {
         }
 
         System.out.println("Fin du programme.");
+    }
+
+    // Fonction pour vérifier le score et afficher la mention correspondante
+    private static void checkAndDisplayRatingMention(String ratingValue) {
+        // Extraire la partie numérique du score
+        int score = Integer.parseInt(ratingValue.replaceAll("[^0-9]", ""));
+        // Afficher la mention correspondante
+        if (score < 20) {
+            System.out.println("Mention : Nul");
+        } else if (score >= 20 && score <= 50) {
+            System.out.println("Mention : Bof");
+        } else if (score > 50 && score <= 70) {
+            System.out.println("Mention : Bien");
+        } else {
+            System.out.println("Mention : Très bien");
+        }
     }
 }
