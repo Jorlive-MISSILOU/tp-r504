@@ -1,0 +1,25 @@
+<!-- newuser.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un nouveau compte</title>
+</head>
+<body>
+    <h1>Créer un nouveau compte utilisateur</h1>
+    <form action="{{ url_for('submit') }}" method="POST">
+        <label for="identifiant">Identifiant :</label><br>
+        <input type="text" id="identifiant" name="identifiant" required><br><br>
+        
+        <label for="password">Mot de passe :</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <label for="email">Adresse e-mail :</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <button type="submit">Valider</button>
+        <button type="button" onclick="window.location.href='{{ url_for('index') }}';">Annuler</button>
+    </form>
+</body>
+</html>

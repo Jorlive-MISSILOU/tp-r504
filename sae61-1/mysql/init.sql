@@ -1,8 +1,10 @@
--- Création de la base de données
-CREATE DATABASE IF NOT EXISTS dolibarr_db;
-USE dolibarr_db;
+-- Creation de la bdd
+CREATE DATABASE IF NOT EXISTS sae61db;
+USE sae61db;
 
--- Création de l'utilisateur 'dolibarr' avec des privilèges sur la base de données 'dolibarr_db'
-CREATE USER IF NOT EXISTS 'dolibarr'@'%' IDENTIFIED BY 'dolibarr';
-GRANT SELECT, SHOW VIEW, RELOAD, EVENT, TRIGGER, REPLICATION CLIENT, SUPER ON *.* TO 'dolibarr'@'%' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
+CREATE TABLE IF NOT EXISTS utilisateur (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    identifiant VARCHAR(10) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL
+);
