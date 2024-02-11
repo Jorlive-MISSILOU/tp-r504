@@ -9,12 +9,12 @@ if [ $? != 0 ]; then
 fi
 
 #purge  tous les réseaux
-docker network prune -f
+#docker network prune -f
 # if [ $? != 0 ]; then
 # 	exit 2
 # fi
 # #purge  tous les volumes
-# docker volume prune -f
+#docker volume prune -f
 # if [ $? != 0 ]; then
 # 	exit 2
 # fi

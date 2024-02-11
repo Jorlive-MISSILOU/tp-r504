@@ -5,13 +5,6 @@ from flask_bcrypt import Bcrypt
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Clé secrète pour les messages flash
 
-# MySQL configuration
-app.config['MYSQL_HOST'] = 'mysql'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'root'
-app.config['MYSQL_DB'] = 'sae61db'
-app.config['MYSQL_PORT'] = 3306
-
 # Initialize MySQL
 mysql = MySQL(app)
 
@@ -40,7 +33,7 @@ def submit():
 
         if user:
             flash('Identifiant ou email déjà utilisé', 'error')
-            return redirect(url_for('new_user'))
+            return render_template('newuser.html')
 
         # Hasher le mot de passe
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
@@ -50,8 +43,8 @@ def submit():
         mysql.connection.commit()
         cur.close()
 
-        flash('Utilisateur enregistré avec succès', 'success')
+        flash('Inscription réussie', 'success')
         return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')

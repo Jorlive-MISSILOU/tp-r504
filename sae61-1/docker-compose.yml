@@ -6,10 +6,6 @@ services:
     build:
       context: .
       dockerfile: mysql/Dockerfile
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=root
     command: --local-infile=1
     networks:
       - sae61-1
