@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_mysqldb import MySQL
 from flask_bcrypt import Bcrypt
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='/srv/templates')
 app.secret_key = 'your_secret_key'  # Clé secrète pour les messages flash
 
 # Initialize MySQL

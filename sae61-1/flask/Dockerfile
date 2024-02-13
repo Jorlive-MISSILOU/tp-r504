@@ -15,7 +15,6 @@ RUN pip3 install --upgrade pip
 
 # Installer les paquets Python via pip
 RUN pip3 install flask flask-mysqldb mysql-connector-python flask_bcrypt
-RUN apt-get -y install iputils-ping iproute2
 
 # Créer le dossier /srv/templates
 RUN mkdir -p /srv

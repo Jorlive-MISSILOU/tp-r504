@@ -11,7 +11,7 @@
         }
         form {
             text-align: center;
-            font-size: 50px;
+            font-size: 15px;
         }
         body {
             background-color: aquamarine;
@@ -22,13 +22,13 @@
 <body>
     <h1>Créer un nouveau compte utilisateur</h1>
     <form action="{{ url_for('submit') }}" method="POST">
-        <label for="identifiant">Identifiant :</label><br>
+        <label for="identifiant"> :</label><br>
         <input type="text" id="identifiant" name="identifiant" required><br><br>
         
-        <label for="password">Mot de passe :</label><br>
+        <label for="password"><strong>Mot de passe :</strong></label><br>
         <input type="password" id="password" name="password" required><br><br>
         
-        <label for="email">Adresse e-mail :</label><br>
+        <label for="email"><strong> e-mail :</strong></label><br>
         <input type="email" id="email" name="email" required><br><br>
         
         <button type="submit">Valider</button>
@@ -36,3 +36,6 @@
     </form>
 </body>
 </html>
+
+
+<form action="{{ url_for('submit') }}" method="POST"></form>
